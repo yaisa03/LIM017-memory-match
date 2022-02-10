@@ -228,12 +228,17 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
 
+  <details><summary>Links</summary><p>
+
+  * [LMS Testing usabilidad](https://lms.laboratoria.la/cohorts/lim-2022-01-bootcamp-js-lim017/topics/user-understanding/00-qualitative-research/07-usability-testing)
+</p></details>
+
+
 ## 4. Consideraciones generales
 
 * Este proyecto se debe resolver en duplas.
 * El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
   interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-* Tiempo para completarlo: Toma como referencia 4 semanas.
 
 ## 5. Criterios de aceptación mínimos del proyecto
 
@@ -285,7 +290,7 @@ diseño debe seguir los fundamentos de _visual design_.
 Durante el reto deberás hacer _tests_ de usabilidad con distintos usuarios, y
 en base a los resultados, deberás iterar tus diseños. Cuéntanos
 qué problemas de usabilidad detectaste a través de los _tests_ y cómo los
-mejoraste en tu propuesta final.
+mejoraste en tu propuesta final. Puedes leer mas de estos tipos de testeos [aquí](https://www.hiberus.com/crecemos-contigo/que-es-un-test-de-usabilidad-y-por-que-deberia-hacerlo/) y en el [LMS](https://lms.laboratoria.la/cohorts/lim-2022-01-bootcamp-js-lim017/topics/user-understanding/00-qualitative-research/07-usability-testing).
 
 ### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
 
@@ -501,7 +506,8 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
   Aceptación_ y nosotros sí lo haremos. Más detalles en la guía.
 * [Cómo dividir H.U.](https://www.youtube.com/watch?v=Ueq786iZ30I&t=341s)
 * [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
-
+* [Serie de articulos de Testeos con usabilidad](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
+* 
 ## 9. Checklist
 
 * [ ] Usa VanillaJS.
@@ -517,6 +523,7 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
   en `README.md`.
 * [ ] Incluye el listado de problemas que detectaste a través de tests de
   usabilidad en el `README.md`.
+* [ ] Incluye la `Plan de acción` (Objetivos de Aprendizaje priorizados) de cada programadora en el `README.md` o otro documento.
 * [ ] UI: Muestra cartas _barajadas_ correctamente.
 * [ ] UI: Permite al usuario _destapar_ las cartas de 2 en 2.
 * [ ] UI: Deja destapadas las cartas que coincidan al destaparlas.
