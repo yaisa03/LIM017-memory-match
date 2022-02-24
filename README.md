@@ -502,10 +502,10 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 #### Organización del Trabajo
 
 * [Historias de Usuario](https://www.youtube.com/watch?v=ky6wFiF5vMk&t=344s).
-  Ojo que Cris no diferencia _Definición de terminado_ de _Criterios de
+  Ojo que el usuario (Cris en el video) no diferencia _Definición de terminado_ de _Criterios de
   Aceptación_ y nosotros sí lo haremos. Más detalles en la guía.
 * [Cómo dividir H.U.](https://www.youtube.com/watch?v=Ueq786iZ30I&t=341s)
-* [Guía para Data Lovers](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
+* [Guía para planning y H.U.](https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000)
 * [Serie de articulos de Testeos con usabilidad](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
 * 
 ## 9. Checklist
