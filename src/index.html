@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Memory Match</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    
-    <section id="pageOne">
-      <h1>Juega Memory Match</h1>
 
-      <main id="memoryGameOptions">
-      <div  id="chooseWebDev">
+<head>
+  <meta charset="utf-8">
+  <title>Memory Match</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <section id="pageOne">
+
+    <h1 id="title">Juega Memory Match</h1>
+
+    <main id="memoryGameOptions">
+
+      <div id="chooseWebDev">
         <p>Web Develompent</p>
         <img src="images/webDeb.png">
       </div>
 
       <div id="choosePokemon">
-        <p >Pokemon</p>
+        <p>Pokemon</p>
         <img src="images/pokemonLogo.jpg">
       </div>
 
       <div id="chooseStudioGhibli">
-        <p >Studio Ghibli</p>
+        <p>Studio Ghibli</p>
         <img src="images/studioGhibli.jpg">
       </div>
     </main>
-    </section>
 
-    <section id="gameWebDeb" style="display:none;">
-    </section>
+  </section>
 
-    <section id="gamePokemon" style="display:none;">
-    </section>
+  <section id="pageTwo" style="display:none;">
 
-    <section id="gameStudioGhibli" style="display:none;">
-    </section>
+    <aside class="gameInfoContainer">
+      <div class="gameInfo">
+        Tiempo <span id="time">100 </span>
+      </div>
+      <div class="gameInfo">
+        Cartas giradas <span id="flips">0 </span>
+      </div>
+    </aside>
 
-    <script src="main.js" type="module"></script>
-  </body>
+    <div id="gameContainer">
+    </div>
+  </section>
+
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>

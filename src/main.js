@@ -9,6 +9,15 @@ const dataPokemon = pokemon.items;
 
 /*vista de los juegos por tematica*/
 const memoryGameOptions = document.getElementById("memoryGameOptions");
+/*texto de bienvenida*/
+const title = document.getElementById("title");
+//vista de la pagina 2
+const pageTwoGame = document.getElementById("pageTwo");
+//contendor de las cartas
+const gameContainer = document.getElementById("gameContainer");
+//Timer y numero de flips de las cartas
+const gameInfo = document.querySelector(".gameInfoContainer");
+
 
 /*funcion que crea las cartas*/
 function showCards(data, gameImage) {
@@ -22,20 +31,20 @@ function showCards(data, gameImage) {
                         <img class="front-card" src="${e.image}">
                         <img class="back-card" src="${gameImage}">
                     </div>`
-        gamePokemon.innerHTML = cardsDiv;
+        gameContainer.innerHTML = cardsDiv;
     });
     return cardsDiv;
 }
 
 //Juego de tematica POKEMON
-//contendor de las cartas
-let gamePokemon = document.getElementById("gamePokemon");
-//imagen de la carta de adelante para el juego
+//imagen de la carta de atras para el juego
 const imageGamePokemon = "images/gamePokemon.png";
 //para seleccionar el juego
 const choosePokemon = document.getElementById("choosePokemon"); //contenedor
 choosePokemon.addEventListener('click', () => { //evento que inicia
-    gamePokemon.style.display = "";
+    pageTwoGame.style.display = "";
+    gameInfo.style.display="";
+    title.innerText= "Pokemon Memory Match";
     memoryGameOptions.style.display = "none";
     showCards(dataPokemon, imageGamePokemon);
     //funcion que chocolatea cartas, el resultado va a gamePokemon
