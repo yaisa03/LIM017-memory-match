@@ -1,0 +1,71 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: auto;
+    background-color: lavender;
+}
+
+#pageOne{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+#memoryGameOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+}
+#memoryGameOptions > div{
+    width: 30%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+#memoryGameOptions > div img{
+    width: 80%;
+    height: 35%;
+}
+
+section[id^=game]{
+    width: 79%;
+    height: 84%;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: auto;
+    display: flex; 
+    flex-wrap: wrap; /*more than just 1 row*/
+    justify-content: center;/*position left to right*/
+    align-items: center;/*streched along the containers hight*/
+}
+
+section[id^=game] > div{
+    border: 2px solid black;
+    width: 15%;
+    height: 28%;
+    border-radius: 10px;
+    margin: auto;
+    position: relative;
+}
+.front-card, .back-card{
+    border: 2px solid black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+}
