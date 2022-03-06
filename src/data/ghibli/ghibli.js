@@ -1,14 +1,20 @@
 export default {
   name: 'Ghibli',
   items: [
-    { id: 'chihiro', image: 'https://www.serebii.net/pokemongo/pokemon/001.png', bgColor: '#339933' },
-    { id: 'totoro', image: 'https://www.serebii.net/pokemongo/pokemon/002.png', bgColor: '#339933' },
-    { id: 'howl', image: 'https://www.serebii.net/pokemongo/pokemon/003.png', bgColor: '#339933' },
-    { id: 'charmander', image: 'https://www.serebii.net/pokemongo/pokemon/004.png', bgColor: '#F05032' },
-    { id: 'charmeleon', image: 'https://www.serebii.net/pokemongo/pokemon/005.png', bgColor: '#F05032' },
-    { id: 'charizard', image: 'https://www.serebii.net/pokemongo/pokemon/006.png', bgColor: '#F05032' },
-    { id: 'squirtle', image: 'https://www.serebii.net/pokemongo/pokemon/007.png', bgColor: '#1572B6' },
-    { id: 'wartortle', image: 'https://www.serebii.net/pokemongo/pokemon/008.png', bgColor: '#1572B6' },
-    { id: 'blastoise', image: 'https://www.serebii.net/pokemongo/pokemon/009.png', bgColor: '#1572B6' },
+    { id: 'susuwatari', image: './imagesGhibli/susuwatari.png', bgColor: '#339933' },
+    { id: 'totoro', image: './imagesGhibli/totoro.png', bgColor: '#339933' },
+    { id: 'conejo', image: './imagesGhibli/conejo.png', bgColor: '#F05032' },
+    { id: 'kodama', image: './imagesGhibli/kodama.png', bgColor: '#F05032' },
+    { id: 'howl', image: './imagesGhibli/howl.png', bgColor: '#1572B6' },
+    { id: 'chihiro', image: './imagesGhibli/chihiro.png', bgColor: '#1572B6' },
+    /*
+    { id: 'sheeta', image: 'https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg'},
+    { id: 'mei', image: 'https://static.wikia.nocookie.net/studio-ghibli/images/b/b5/God_Jul_Mei_önskar_från_Tomten.jpg'},
+    { id: 'nausicaa', image: 'https://static.wikia.nocookie.net/studio-ghibli/images/b/be/Nausicaa.jpg'},
+    { id: 'toshio', image: 'https://static.wikia.nocookie.net/studio-ghibli/images/5/5d/Toshio.jpg'},
+    { id: 'san', image: 'https://static.wikia.nocookie.net/studio-ghibli/images/3/3f/San.jpg'},
+    { id: 'chihiro', image: 'https://static.wikia.nocookie.net/studio-ghibli/images/8/8e/Chihiro_Ogino.jpg'},
+    { id: 'kiki', image: 'https://static.wikia.nocookie.net/studio-ghibli/images/5/59/Kiki.jpg1572B6' },
+    */
   ],
 };
