@@ -19,14 +19,18 @@ body{
     padding: 2% 1% 1% ;
 }
 h1[id^="title"]{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Courier New', monospace;
     color: #DADBBD;
     font-size: 4em;
+}
+#title1{
+    padding-top: 2%;
 }
 p{ /*tecto para elegir el juego*/
     color: #DADBBD ;
     font-size: 1.5em;
     padding-bottom: 2%;
+    font-family: 'Courier New', monospace;
 }
 /*contendor de las opciones de juego*/
 #memoryGameOptions{
@@ -34,7 +38,7 @@ p{ /*tecto para elegir el juego*/
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 9% 5% 5%;
+    padding: 7% 5% 5%;
 }
 #memoryGameOptions > div{ /*opciones de juego*/
     width: 30%;
@@ -45,11 +49,57 @@ p{ /*tecto para elegir el juego*/
     justify-content: space-around;
     border: 2px solid #D82148;
     border-radius: 10px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
+
+#memoryGameOptions > div:hover{
+    border: 2.5px solid #DADBBD;
+    background-color: #D82148;
+    width: 31%;
+    font-weight: bold;
+}
+
 #memoryGameOptions > div img{
     width: 80%;
     height: 35%;
 }
+
+@media only screen and (min-width: 360px) and (max-width: 768px) {
+    #pageOne{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2% ;
+    }
+    #memoryGameOptions{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #memoryGameOptions > div{ /*opciones de juego*/
+        width: 80%;
+        padding: 2%;
+        margin: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border: 2px solid #D82148;
+        border-radius: 10px;
+        transition: width 100ms ease-in-out, height 100ms ease-in-out;
+    }
+    /*#memoryGameOptions > div:hover{
+        border: 2.5px solid #DADBBD;
+        background-color: #D82148;
+        width: 82%;
+        font-weight: bold;
+    }*/
+    #memoryGameOptions > div img{
+        width: 80%;
+        height: 40%;
+    }
+  } 
 
 /*PAGINA 2*/
 #pageTwo{
@@ -66,13 +116,15 @@ p{ /*tecto para elegir el juego*/
 }
 .gameInfoContainer{
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 .gameInfo{
     color:#6EBF8B;
     font-size: 1.5em;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding: 1%;
-    margin: 0 60px;
+    padding: 2%;
+    margin: 0 8%;
+    font-family: 'Courier New', monospace;
 }
 #containerGamePokemon{ /*contenedor de las todas las cartas*/
     width: 70%;
@@ -111,7 +163,7 @@ div[id^="container"] > div{ /*contenedor de cada carta*/
     position: absolute;
     width: 100%;
     height: 100%;
-    padding: 20% 15%;
+    padding: 25% 20%;
     border-radius: 10px;
     background: #DADBBD;
 }
