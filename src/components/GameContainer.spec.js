@@ -1,13 +1,15 @@
 import { containerWebDev, containerPokemon, containerGhibli } from './GameContainer';
 //import pokemon from '../data/pokemon/pokemon.js';
-describe('Cards', () => {
-  it('should render without crashing', () => {
+//const root = document.getElementById("pageTwo");
+
+describe('containerWebDev es elemento html', () => {
+  it('es elemento html', () => {
     const el = containerWebDev();
     expect(el instanceof HTMLElement).toBe(true);
   });
 });
 
-describe('Cards', () => {
+describe('containerGameWebDev', () => {
   it('should render with correct class', () => {
     const el = containerWebDev();
     expect(el.id).toBe("containerGameWebDev");
@@ -15,28 +17,28 @@ describe('Cards', () => {
 });
 
 
-describe('Cards', () => {
-  it('should render without crashing', () => {
+describe('containerPokemon', () => {
+  it('es elemento html', () => {
     const el = containerPokemon();
     expect(el instanceof HTMLElement).toBe(true);
   });
 });
 
-describe('Cards', () => {
+describe('containerPokemon', () => {
   it('should render with correct id', () => {
     const el = containerPokemon();
     expect(el.id).toBe("containerGamePokemon");
   });
 });
 
-describe('Cards', () => {
-  it('should render without crashing', () => {
+describe('containerGhibli', () => {
+  it('es elemento html', () => {
     const el = containerGhibli();
     expect(el instanceof HTMLElement).toBe(true);
   });
 });
 
-describe('Cards', () => {
+describe('containerGhibli', () => {
   it('should render with correct id', () => {
     const el = containerGhibli();
     expect(el.id).toBe("containerGameGhibli");

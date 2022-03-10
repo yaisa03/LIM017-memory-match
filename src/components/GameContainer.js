@@ -1,23 +1,22 @@
-
-function containerWebDev(root) {
+function containerWebDev() {
     const containerWebDev = document.createElement('div');
     containerWebDev.setAttribute("id", "containerGameWebDev");
-    root.appendChild(containerWebDev)
+    //root.appendChild(containerWebDev)
     return containerWebDev;
 }
 
-function containerPokemon(root) {
+function containerPokemon() {
     const containerPokemon = document.createElement('div');
     containerPokemon.setAttribute("id", "containerGamePokemon");
-    root.appendChild(containerPokemon);
+    //root.appendChild(containerPokemon);
     return containerPokemon;
 }
 
-function containerGhibli(root) {
+function containerGhibli() {
     const containerGhibli = document.createElement('div');
     containerGhibli.setAttribute("id", "containerGameGhibli");
-    root.appendChild(containerGhibli);
+    //root.appendChild(containerGhibli);
     return containerGhibli;
 }
 
-export {containerPokemon, containerWebDev, containerGhibli };
+export { containerPokemon, containerWebDev, containerGhibli };

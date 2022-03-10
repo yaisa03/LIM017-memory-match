@@ -1,33 +1,18 @@
-
-
 //funcion que crea las cartas
-const createCards = (data, gameImage, gameContainer) => {
+export function createCards(data, gameImage) {
     let newData = data.concat(data); // dos veces la data
-    let gameGrid = shuffle(newData); // orden random de la data
-
-    gameGrid.map((e) => {
-        // crear carta
-        const card = document.createElement('div');
-        card.classList.add('memorycard');
-        card.setAttribute("id", `${e.id}`);
-        // frente de la carta
-        const front = document.createElement('img');
-        front.classList.add('front-card');
-        front.src = `${e.image}`
-        front.style.background = `${e.bgColor}`
-        // reverso de la carta
-        const back = document.createElement('img');
-        back.classList.add('back-card');
-        back.src = `${gameImage}`
-        // ingresar la data al contenedor
-        gameContainer.appendChild(card)
-        card.appendChild(front)
-        card.appendChild(back)
+    let gameGrid = shuffle(newData);
+    let cardsDiv = "";
+    gameGrid.map(e => {
+        cardsDiv += `<div id="${e.id} class="memorycard">
+                        <img class="front-card" src="${e.image}" style="background:${e.bgColor}">
+                        <img class="back-card" src="${gameImage}">
+                    </div>`
     });
-    return gameContainer;
+    return cardsDiv; // shuffle(cardsDiv)
 }
 
-function shuffle(a) { //Fisher–Yates shuffle
+export function shuffle(a) { //Fisher–Yates shuffle
     for (let i = a.length - 1; i > 0; i--) {
         const randomIndex = Math.floor(Math.random() * (i + 1));
         const y = a[randomIndex]
@@ -37,4 +22,5 @@ function shuffle(a) { //Fisher–Yates shuffle
     return a;
 }
 
-export default createCards;
+
+

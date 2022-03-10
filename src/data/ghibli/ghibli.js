@@ -2,11 +2,12 @@ export default {
   name: 'Studio Ghibli',
   items: [
     { id: 'susuwatari', image: './imagesGhibli/susuwatari.png', bgColor: '#339933' },
-    { id: 'totoro', image: './imagesGhibli/totoro.png', bgColor: '#339933' },
     { id: 'conejo', image: './imagesGhibli/conejo.png', bgColor: '#F05032' },
     { id: 'kodama', image: './imagesGhibli/kodama.png', bgColor: '#F05032' },
     { id: 'howl', image: './imagesGhibli/howl.png', bgColor: '#1572B6' },
     { id: 'kiki', image: './imagesGhibli/kiki.png', bgColor: '#1572B6' },
+    { id: 'mask', image: './imagesGhibli/mask.png', bgColor: '#339933' },/*
+    { id: 'bunny', image: './imagesGhibli/bunny.png', bgColor: '#4FC08D' },*/
     /*
     { id: 'sheeta', image: 'https://static.wikia.nocookie.net/studio-ghibli/images/c/c3/Sheeta.jpg'},
     { id: 'mei', image: 'https://static.wikia.nocookie.net/studio-ghibli/images/b/b5/God_Jul_Mei_önskar_från_Tomten.jpg'},

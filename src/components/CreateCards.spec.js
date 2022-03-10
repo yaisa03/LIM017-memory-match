@@ -1,13 +1,23 @@
-import createCards from "./CreateCards";
-import pokemon from "./data/pokemon/pokemon.js"
+import {createCards, shuffle} from "./CreateCards.js";
+import ghibli from '../data/ghibli/ghibli.js';
+const dataGhibli = ghibli.items;
+const imageGameGhibli = "images/gameGhibli.png";
 
-const containerGamePokemon = document.getElementById("containerGamePokemon");
-const imageGamePokemon = "images/gamePokemon.png";
+describe('CreateCards', () => {
+    it('it should be a function', () => {
+    expect(typeof createCards).toBe('function');
+    });
+  });
 
-describe('Create', () => {
-    it('should render without crashing', () => {
-      const cards = createCards(pokemon.items, imageGamePokemon, containerGamePokemon);
-      expect(cards.length).toBe(pokemon.length);
+  describe('CreateCards', () => {
+    it('it should be a function', () => {
+    expect(typeof createCards(dataGhibli, imageGameGhibli)).toBe('string');
+    });
+  });
+
+  describe('shuffle', () => {
+    it('it should be a function', () => {
+    expect(typeof shuffle).toBe('function');
     });
   });
   

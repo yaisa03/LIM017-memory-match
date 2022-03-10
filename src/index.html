@@ -2,52 +2,50 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Memory Match</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <section id="pageOne">
-    <h1 id="title1">Juega Memory Match</h1>
+    <section id="pageOne">
+        <h1 id="title1"> Juega Memory Match</h1>
 
-    <main id="memoryGameOptions">
+        <main id="memoryGameOptions">
 
-      <div id="chooseWebDev">
-        <p>Web Develompent</p>
-        <img src="images/webDev.png">
-      </div>
+            <div id="chooseStudioGhibli">
+                <p>Studio Ghibli</p>
+                <img src="images/studioGhibli.jpg">
+            </div>
+            <div id="choosePokemon">
+                <p>Pokemon</p>
+                <img src="images/pokemonLogo.jpg">
+            </div>
+            <div id="chooseWebDev">
+                <p>Web Development</p>
+                <img src="images/webDev.png">
+            </div>
+        </main>
 
-      <div id="choosePokemon">
-        <p>Pokemon</p>
-        <img src="images/pokemonLogo.jpg">
-      </div>
+    </section>
 
-      <div id="chooseStudioGhibli">
-        <p>Studio Ghibli</p>
-        <img src="images/studioGhibli.jpg">
-      </div>
-    </main>
+    <section id="pageTwo" style="display:none;">
+        <h1 id="title2"></h1>
 
-  </section>
+        <aside class="gameInfoContainer">
+            <div class="gameInfo">
+                Tiempo <span id="time">100 </span>
+            </div>
+            <div class="gameInfo">
+                Cartas giradas <span id="flips">0 </span>
+            </div>
+        </aside>
 
-  <section id="pageTwo" style="display:none;">
-    <h1 id="title2"></h1>
+    </section>
 
-    <aside class="gameInfoContainer">
-      <div class="gameInfo">
-        Tiempo <span id="time">100 </span>
-      </div>
-      <div class="gameInfo">
-        Cartas giradas <span id="flips">0 </span>
-      </div>
-    </aside>
-    
-  </section>
-
-  <script src="main.js" type="module"></script>
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>
