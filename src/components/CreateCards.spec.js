@@ -10,7 +10,7 @@ describe('CreateCards', () => {
   });
 
   describe('CreateCards', () => {
-    it('it should be a function', () => {
+    it('it should return a string', () => {
     expect(typeof createCards(dataGhibli, imageGameGhibli)).toBe('string');
     });
   });

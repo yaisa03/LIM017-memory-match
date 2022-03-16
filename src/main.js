@@ -1,21 +1,54 @@
-import {gameThemes} from './components/GameThemes.js';
+import { createCards } from './components/CreateCards.js';
+import { gameThemes } from './components/GameThemes.js';
 
-// vista de  juegos por tematica
-const pageOne = document.getElementById("pageOne");
-// vista de la pagina 2
-const pageTwoGame = document.getElementById("pageTwo");
+// contiene las opciones de juego
+const gameOptions = document.querySelectorAll('div[id^="game"]');
+// navegador
+const nav = document.getElementById('navigator');
+// Paginas
+// const pageOne = document.getElementById('pageOne');
+// const pageTwo = document.getElementById('pageTwo');
+// elegir nivel de juego
+const selectLevel = document.getElementById('selectLevel');
+const levelSelected = document.querySelectorAll('[id^="option"]')
+// contenedores de los juegos por nivel 
+const gameContainers = document.querySelectorAll('div[id^="level"]');
+// variables
+let gameChosen, gameLevel, gameData, gameImage, newData, gameContainer;
 
-// lista de las opciones de juego
-const listOfGames = document.querySelectorAll("div[id^=choose]")
-// evento que que lleva a los juegos y muentra las cartas
-for (let i = 0; i < listOfGames.length; i++) {
-    listOfGames[i].addEventListener('click', () => {
-        for (let j = 0; j < gameThemes.length; j++) {
-            if (i == j) {
-                pageTwoGame.style.display = "";
-                pageOne.style.display = "none";
-                return gameThemes[j]();
+gameOptions.forEach(e => {
+    e.addEventListener('click', () => {
+        for (let i = 0; i < gameOptions.length; i++) {
+            nav.style.display = "";
+            if (gameOptions[i] == e) {
+                selectLevel.style.display = "";
+                gameChosen = i;
+                gameData = gameThemes[i].data;
+                gameImage = gameThemes[i].image;
+            } else {
+                gameOptions[i].style.display = "none";
             }
         }
-    });
+        return gameData, gameImage, gameChosen;
+    })
+})
+
+for (let i = 0; i < levelSelected.length; i++) {
+    levelSelected[i].addEventListener('click', () => {
+        gameLevel = i; // nivel de juego elegido , es lo que muestra el contenedor
+        gameContainer = gameContainers[i];
+        if (gameLevel == 0) {
+            newData = gameData;
+        } else if (gameLevel == 1) {
+            newData = gameData;
+        } else {
+            newData = gameData;
+        }
+        // pageOne.style.display = "none";
+        // pageTwo.style.display = "";
+        // gameContainer.style.display = "";
+        // gameContainer.innerHTML = createCards(newData, gameImage);
+        createCards(newData, gameImage);
+        return newData, gameContainer;
+    })
 }

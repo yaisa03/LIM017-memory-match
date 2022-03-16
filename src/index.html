@@ -3,46 +3,52 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Memory Match</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <header>
+        <nav id="navigator" style="display: none;">
+            <ul>
+                <li>Inicio</li>
+            </ul>
+        </nav>
+    </header>
 
     <section id="pageOne">
-        <h1 id="title1"> Juega Memory Match</h1>
+        <h1>Juega Memory Card</h1>
 
-        <main id="memoryGameOptions">
+        <div id="containerGame">
 
-            <div id="chooseStudioGhibli">
-                <p>Studio Ghibli</p>
-                <img src="images/studioGhibli.jpg">
+            <div id="gameStudioGhibli">
+                <img src="images/Studio_Ghibli_portal_logo.png">
             </div>
-            <div id="choosePokemon">
-                <p>Pokemon</p>
-                <img src="images/pokemonLogo.jpg">
-            </div>
-            <div id="chooseWebDev">
-                <p>Web Development</p>
-                <img src="images/webDev.png">
-            </div>
-        </main>
 
+            <div id="gamePokemon">
+                <img src="images/logo-pokemon.png">
+            </div>
+
+            <div id="gameWebDevelopment">
+                <img src="images/logo-web-development.png">
+            </div>
+
+            <div id="selectLevel" style="display:none;">
+                <button id="optionOne">Nivel 1</button>
+                <button id="optionTwo">Nivel 2</button>
+                <button id="optionThree">Nivel 3</button>
+            </div>
+
+        </div>
     </section>
 
-    <section id="pageTwo" style="display:none;">
-        <h1 id="title2"></h1>
-
-        <aside class="gameInfoContainer">
-            <div class="gameInfo">
-                Tiempo <span id="time">100 </span>
-            </div>
-            <div class="gameInfo">
-                Cartas giradas <span id="flips">0 </span>
-            </div>
-        </aside>
-
+    <section id="pageTwo" style="display: none;">
+        <h1 id="titlePage2"></h1>
+        
+        <div id="levelOne" style="display: none;"></div>
+        <div id="levelTwo" style="display: none;"></div>
+        <div id="levelThree" style="display: none;"></div>
     </section>
 
     <script src="main.js" type="module"></script>

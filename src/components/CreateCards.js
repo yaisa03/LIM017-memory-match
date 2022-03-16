@@ -1,12 +1,13 @@
+
 //funcion que crea las cartas
-export function createCards(data, gameImage) {
-    let newData = data.concat(data); // dos veces la data
-    let gameGrid = shuffle(newData);
+export function createCards(newData, gameImage) { // cutData(gameLevel, gameData) 
+    let dataConcat = newData.concat(newData); // dos veces la data
+    let gameGrid = shuffle(dataConcat);
     let cardsDiv = "";
     gameGrid.map(e => {
         cardsDiv += `<div id="${e.id} class="memorycard">
                         <img class="front-card" src="${e.image}" style="background:${e.bgColor}">
-                        <img class="back-card" src="${gameImage}">
+                        <img class="back-card" src="${gameImage}" style="background: #DADBBD">
                     </div>`
     });
     return cardsDiv; // shuffle(cardsDiv)
@@ -21,6 +22,3 @@ export function shuffle(a) { //Fisher–Yates shuffle
     }
     return a;
 }
-
-
-
