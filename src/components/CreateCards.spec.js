@@ -20,4 +20,10 @@ describe('CreateCards', () => {
     expect(typeof shuffle).toBe('function');
     });
   });
+
+  describe('shuffle', () => {
+    it('it should return', () => {
+    expect(shuffle(dataGhibli)).toBe(dataGhibli); // .not.toThrow('error');
+    });
+  });
   
