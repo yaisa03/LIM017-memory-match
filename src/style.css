@@ -23,6 +23,7 @@ li{
     list-style: none;
     color: #fff;
     padding: 8px;
+    font-size: 1rem;
 }
 #pageOne{
     height: 80%;
@@ -76,6 +77,9 @@ button[id^="option"]{
 @media (min-width: 600px) {
     body{
         background-image: url(images/desktop.jpg)
+    }
+    li{
+        font-size: 1.5rem;
     }
     #pageOne{
         padding: 50px;
@@ -138,13 +142,15 @@ button[id^="option"]{
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 2px solid #BB9981;
+    border: 3px solid #BB9981;
+    border-radius: 10px;
 }
 [id^='level'] div img { /* front-card back-card */
     height: 100%;
     width: 100%;
     position: absolute;
     padding: 10px;
+    border-radius: 10px;
 }
 #levelTwo {
     height: 100%;
@@ -162,7 +168,8 @@ button[id^="option"]{
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 2px solid #BB9981;
+    border: 3px solid #BB9981;
+    border-radius: 10px;
 }
 #levelThree {
     height: 100%;
@@ -180,5 +187,35 @@ button[id^="option"]{
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 2px solid #BB9981;
+    border: 3px solid #BB9981;
+    border-radius: 10px;
+}
+@media (min-width: 768px) {
+    #levelOne {
+        height: 80%;
+        width: 45%;
+    }
+    #levelOne div { /* .memorycard */
+        width: 28%;
+        height: 40%;
+    }
+    #levelTwo {
+        height: 75%;
+        width: 80%;
+    }
+    #levelTwo div { /* .memorycard */
+        width: 15%;
+        height: 40%;
+    }
+    #levelThree {
+        height: 90%;
+        width: 90%;
+    }
+    #levelThree div { /* .memorycard */
+        width: 15%;
+        height: 30%;
+    }
+    [id^='level'] div img { /* front-card back-card */
+        padding: 15px;
+    }
 }
