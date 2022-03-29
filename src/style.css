@@ -7,7 +7,13 @@ body{
     height: 100vh;
     width: 100vw;
     background-color: #BB9981;
-    background-image: url(images/movile.jpg)
+    background-image: url(images/movile.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 header{
     height: 10vh;
@@ -16,14 +22,29 @@ header{
     opacity: 0.95;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+nav{
+    width: 95%;
+    height: 100%;
+}
+ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
     justify-content: flex-end;
-    padding-right: 15px;
 }
 li{
     list-style: none;
     color: #fff;
-    padding: 8px;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    padding: 3%;
+}
+li:hover{
+    border-radius: 3px;
+    color:#1a0413;
+    background-color: #BB9981
 }
 #pageOne{
     height: 80%;
@@ -37,9 +58,9 @@ li{
 h1{
     font-size: 2.5rem;
     color:rgb(228, 217, 235);
-    text-shadow:#1a0413  5px 3px 3px;
+    text-shadow:#1a0413  6px 4px 4px;
 }
-#containerGame{
+#containerGames{
     height: 70%;
     width: 75%;
     margin: 15px;
@@ -50,14 +71,19 @@ div[id^="game"]{
     height: 30%;
     margin: 10px;
     border: 1px solid rgb(228, 217, 235);
+    background-color: #0e010a;
     box-shadow: #fff 2px 3px 1px;
     border-radius: 10px;
-    background-color: #0e010a;
     opacity: 0.95;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+div[id^="game"]:hover{
+    height: 32%;
+    border: 3px solid rgb(228, 217, 235);
+    background-color: #BB9981;
 }
 div[id^="game"] img{
     height: 80%;
@@ -76,10 +102,11 @@ button[id^="option"]{
 }
 @media (min-width: 600px) {
     body{
-        background-image: url(images/desktop.jpg)
+        background-image: url(images/desktop.jpg);
     }
     li{
         font-size: 1.5rem;
+        padding: 1%;
     }
     #pageOne{
         padding: 50px;
@@ -87,7 +114,7 @@ button[id^="option"]{
     h1{
         font-size: 3.5rem;
     }
-    #containerGame{
+    #containerGames{
         height: 100%;
         width: 90%;
         display: flex;
@@ -104,11 +131,15 @@ button[id^="option"]{
         align-items: center;
         justify-content: center;
     }
+    div[id^="game"]:hover{
+        height: 52%;
+        width: 32%;
+    }
     div[id^="game"] img{
         height: 60%;
     }
     #selectLevel{
-        width: 80%;
+        width: 100%;
     }
     button[id^="option"]{
         width: 15%;
@@ -118,13 +149,21 @@ button[id^="option"]{
 }
 /*pagina 2*/
 #pageTwo {
-    height: 80%;
+    height: 85%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.infoContainer{
+    font-size: 1.2rem;
+    color:rgb(228, 217, 235);
+    text-shadow:#1a0413  6px 4px 4px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
 }
 #levelOne {
     height: 50%;
@@ -137,7 +176,7 @@ button[id^="option"]{
 }
 #levelOne div { /* .memorycard */
     width: 30%;
-    height: 40%;
+    height: 43%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,7 +189,7 @@ button[id^="option"]{
     width: 100%;
     position: absolute;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 #levelTwo {
     height: 100%;
@@ -163,7 +202,7 @@ button[id^="option"]{
 }
 #levelTwo div { /* .memorycard */
     width: 30%;
-    height: 20%;
+    height: 23%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,7 +212,7 @@ button[id^="option"]{
 }
 #levelThree {
     height: 100%;
-    width: 90%;
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -209,7 +248,7 @@ button[id^="option"]{
     }
     #levelThree {
         height: 90%;
-        width: 90%;
+        width: 85%;
     }
     #levelThree div { /* .memorycard */
         width: 15%;
@@ -218,4 +257,20 @@ button[id^="option"]{
     [id^='level'] div img { /* front-card back-card */
         padding: 15px;
     }
+}
+[id^='level']{ /* containers de los juegos */
+    perspective: 1000px;
+}
+.memorycard{
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.memorycard.flipped{
+    transform:rotateY(180deg);
+}
+.front-card, .back-card{
+    backface-visibility: hidden;
+}
+.front-card{
+    transform:rotateY(180deg);
 }

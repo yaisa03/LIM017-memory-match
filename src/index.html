@@ -10,17 +10,18 @@
 
 <body>
     <header>
-        <nav id="navigator" style="display: none;">
+        <nav id="navigator">
             <ul>
-                <li>Inicio</li>
+                <li id="home">Inicio</li>
+                <!--<li id="back">Volver</li>-->
             </ul>
         </nav>
     </header>
 
     <section id="pageOne">
-        <h1>Juega Memory Card</h1>
+        <h1>Juega Memory Match</h1>
 
-        <div id="containerGame">
+        <div id="containerGames">
 
             <div id="gameStudioGhibli">
                 <img src="images/Studio_Ghibli_portal_logo.png">
@@ -46,6 +47,15 @@
     <section id="pageTwo" style="display: none;">
         <h1 id="titlePage2">Memory Game</h1>
         
+        <div class="infoContainer">
+            <div class="infoGame">
+              Tiempo <span id="time">100</span>
+            </div>
+            <div class="infoGame">
+              Cartas Giradas <span id="flips">0</span>
+            </div>
+        </div>
+
         <div id="levelOne" style="display: none;"></div>
         <div id="levelTwo" style="display: none;"></div>
         <div id="levelThree" style="display: none;"></div>
