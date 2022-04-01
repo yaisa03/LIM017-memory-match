@@ -15,41 +15,55 @@ const levelSelected = document.querySelectorAll('[id^="option"]') // cada opcion
 // contenedores de los niveles del juego 
 const gameContainers = document.querySelectorAll('div[id^="level"]');
 // variables del tema elegido
-let gameData, gameImage, gameTitle;
+let gameData, gameImage, gameTitle, slicedData;
 
 homeButton.addEventListener('click', () => {
     location.reload();
 });
 // elegir tema del juego
-gameOptions.forEach(e => {
-    e.addEventListener('click', () => {
-        for (let i = 0; i < gameOptions.length; i++) {
-            if (gameOptions[i] === e) { // i es la tema de juego elegodo
-                selectLevel.style.display = "";
-                gameData = gameThemes[i].data;
-                gameImage = gameThemes[i].image;
-                gameTitle = gameThemes[i].title;
-                // gameOptions[i].style.display = "none";
-            } else { // temas de juego no elegidos
-                gameOptions[i].style.display = "none";
+export function chooseGameTheme() {
+    gameOptions.forEach(e => {
+        e.addEventListener('click', () => {
+            for (let i = 0; i < gameOptions.length; i++) {
+                if (gameOptions[i] === e) { // i es la tema de juego elegodo
+                    selectLevel.style.display = "";
+                    gameData = gameThemes[i].data;
+                    gameImage = gameThemes[i].image;
+                    gameTitle = gameThemes[i].title;
+                    // gameOptions[i].style.display = "none";
+                } else { // temas de juego no elegidos
+                    gameOptions[i].style.display = "none";
+                }
             }
-        }
-    })
-})
-// elegir nivel de juego
-for (let i = 0; i < levelSelected.length; i++) {
-    levelSelected[i].addEventListener('click', () => {
-        const slicedData = sliceData(i, gameData); // i es el nivel de juego elegido 
-        const gameContainer = gameContainers[i]; // contenedor del nivel elegido
-        pageOne.style.display = "none";
-        pageTwo.style.display = "";
-        titlePage2.innerText = gameTitle;
-        gameContainer.style.display = "";
-        gameContainer.innerHTML = createCards(slicedData, gameImage);
-        // cartas de juego
-        const cards = document.querySelectorAll('.memorycard');
-        cards.forEach(card => {
-            card.addEventListener('click', flipCard);
-        });
+        })
     })
 }
+// elegir nivel de juego
+export function showGamesByLevel() {
+    for (let i = 0; i < levelSelected.length; i++) {
+        levelSelected[i].addEventListener('click', () => {
+            slicedData = sliceData(i, gameData); // i es el nivel de juego elegido 
+            const gameContainer = gameContainers[i]; // contenedor del nivel elegido
+            pageOne.style.display = "none";
+            pageTwo.style.display = "";
+            titlePage2.innerText = gameTitle;
+            gameContainer.style.display = "";
+            gameContainer.innerHTML = createCards(slicedData, gameImage);
+            flipCards();
+            return slicedData;
+        })
+    }
+}
+
+function flipCards() {
+    // cartas de juego
+    const cards = document.querySelectorAll('.memorycard');
+    cards.forEach(card => {
+        card.addEventListener('click', flipCard);
+    });
+}
+// inicializar funcuones
+chooseGameTheme();
+showGamesByLevel();
+
+export { slicedData };

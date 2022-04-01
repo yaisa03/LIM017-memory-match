@@ -1,12 +1,15 @@
+import { slicedData } from '../main.js'
+import { winnerMessage } from './CreateCards.js'
 // variables
 let flippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false; // evitar que se giren mas de 2 cartas
-let totalClicks = 0; 
+let totalClicks = 0;
+let correctCards = 0;
 const flippedCards = document.getElementById('flips');
 
 export function flipCard() {
-    if(lockBoard) return; // si el tablero esta bloqueado
+    if (lockBoard) return; // si el tablero esta bloqueado
     if (this === firstCard) return; // si se da click 2 veces sobre la misma carta
     // si this es igual a la 1ra carta no corre la funcion
     this.classList.add('flipped');
@@ -37,6 +40,9 @@ function disableCards() {
     secondCard.removeEventListener('click', flipCard);
     // console.log('es un match');
     resetBoard();
+    correctCards += 2;
+    gameOver();
+    return correctCards;
 }
 
 function unflipCards() {
@@ -54,4 +60,20 @@ function unflipCards() {
 function resetBoard() { //es6 destructuring assignment
     [flippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
+}
+
+function gameOver() {
+    const data = slicedData.concat(slicedData)
+    if (data.length === correctCards) {
+        setTimeout(() => {
+            document.getElementById('pageTwo').innerHTML+=winnerMessage();
+            document.getElementById('ms').showModal();
+            document.getElementById('close').addEventListener('click',()=>{
+                document.getElementById('ms').remove();
+                // location.reload();
+                // volver a jugador
+                // elegir otro tema
+            });
+        }, 1000);
+    }
 }

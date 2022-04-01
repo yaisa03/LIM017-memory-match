@@ -33,3 +33,11 @@ export function sliceData(gameLevel, gameData) {
     }
     return slicedData;
 }
+
+export function winnerMessage() {
+    let message = `<dialog id="ms">
+                   <h2>¡Ganaste!</h2>
+                   <button id="close">Cerrar!</button>
+                   </dialog>`;
+    return message;
+}
