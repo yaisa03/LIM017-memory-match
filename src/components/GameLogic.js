@@ -1,7 +1,9 @@
-
+// variables
 let flippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false; // evitar que se giren mas de 2 cartas
+let totalClicks = 0; 
+const flippedCards = document.getElementById('flips');
 
 export function flipCard() {
     if(lockBoard) return; // si el tablero esta bloqueado
@@ -12,13 +14,18 @@ export function flipCard() {
         // primer click
         flippedCard = true;
         firstCard = this;
+        totalClicks++;
+        flippedCards.innerHTML = totalClicks;
 
     } else { // segundo click
         // flippedCard = false;
         secondCard = this;
+        totalClicks++;
+        flippedCards.innerHTML = totalClicks;
         // ver si son match
         checkMatch();
     }
+    return totalClicks;
 }
 
 function checkMatch() { // operador ternario
@@ -28,7 +35,7 @@ function checkMatch() { // operador ternario
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    console.log('es un match');
+    // console.log('es un match');
     resetBoard();
 }
 
@@ -38,7 +45,7 @@ function unflipCards() {
     setTimeout(() => {
         firstCard.classList.remove('flipped');
         secondCard.classList.remove('flipped');
-        console.log('no es un match');
+        // console.log('no es un match');
         // lockBoard = false; // unlock the board
         resetBoard();
     }, 1500);

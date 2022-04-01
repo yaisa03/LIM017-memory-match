@@ -7,18 +7,18 @@ body{
     height: 100vh;
     width: 100vw;
     background-color: #BB9981;
-    background-image: url(images/movile.jpg);
-    background-attachment: fixed;
+    background-image: url(images/fondoStars.gif);
+    /* background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 header{
-    height: 10vh;
+    height: 9vh;
     width: 100%;
-    background-color: #0e010a;
+    background-color: #D82148;
     opacity: 0.95;
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@ h1{
     text-shadow:#1a0413  6px 4px 4px;
 }
 #containerGames{
-    height: 70%;
+    height: 80%;
     width: 75%;
     margin: 15px;
     display: flex;
@@ -70,20 +70,20 @@ h1{
 div[id^="game"]{
     height: 30%;
     margin: 10px;
-    border: 1px solid rgb(228, 217, 235);
-    background-color: #0e010a;
-    box-shadow: #fff 2px 3px 1px;
+    border: 3px solid #fff;
+    background-color: #151D3B;
+    box-shadow: #D82148 4px 3px 3px;
     border-radius: 10px;
     opacity: 0.95;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transform: scale(0.98);
 }
 div[id^="game"]:hover{
-    height: 32%;
-    border: 3px solid rgb(228, 217, 235);
-    background-color: #BB9981;
+    border: 3px solid #D82148;
+    transform: scale(1);
 }
 div[id^="game"] img{
     height: 80%;
@@ -91,18 +91,26 @@ div[id^="game"] img{
 }
 button[id^="option"]{
     width: 25%;
-    height: 35px;
+    height: 45px;
     margin: 8px;
     color: #fff;
-    border: 2px solid #480032;
-    box-shadow: #fff 4px 3px 3px;
+    border: 2px solid #fff;
+    box-shadow: #D82148 4px 3px 3px;
     border-radius: 10px;
-    background-color: #1a0413 ;
+    background-color: #151D3B ;
     opacity: 0.9;
+    transform: scale(0.97);
+}
+button[id^="option"]:hover{
+    transform: scale(1);
+    border: 2px solid #D82148;
 }
 @media (min-width: 600px) {
+    header{
+        height: 10vh;
+    }
     body{
-        background-image: url(images/desktop.jpg);
+        background-image: url(images/fondoStars.gif);
     }
     li{
         font-size: 1.5rem;
@@ -160,7 +168,7 @@ button[id^="option"]{
 .infoContainer{
     font-size: 1.2rem;
     color:rgb(228, 217, 235);
-    text-shadow:#1a0413  6px 4px 4px;
+    text-shadow: #1a0413  6px 4px 4px;
     display: flex;
     justify-content: space-between;
     width: 80%;
@@ -181,7 +189,7 @@ button[id^="option"]{
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 3px solid #BB9981;
+    border: 3px solid #D82148;
     border-radius: 10px;
 }
 [id^='level'] div img { /* front-card back-card */
@@ -207,7 +215,7 @@ button[id^="option"]{
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 3px solid #BB9981;
+    border: 3px solid #D82148;
     border-radius: 10px;
 }
 #levelThree {
@@ -226,10 +234,15 @@ button[id^="option"]{
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 3px solid #BB9981;
+    border: 3px solid #D82148;
     border-radius: 10px;
 }
 @media (min-width: 768px) {
+    .infoContainer{
+        width: 40%;
+        font-size: 1.5rem;
+        margin-top: 10px;
+    }
     #levelOne {
         height: 80%;
         width: 45%;
@@ -247,8 +260,8 @@ button[id^="option"]{
         height: 40%;
     }
     #levelThree {
-        height: 90%;
-        width: 85%;
+        height: 80%;
+        width: 80%;
     }
     #levelThree div { /* .memorycard */
         width: 15%;
