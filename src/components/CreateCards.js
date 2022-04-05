@@ -36,8 +36,18 @@ export function sliceData(gameLevel, gameData) {
 
 export function winnerMessage() {
     let message = `<dialog id="ms">
-                   <h2>¡Ganaste!</h2>
-                   <button id="close">Cerrar!</button>
-                   </dialog>`;
+           <h2>¡Ganaste!</h2>
+           <button id="scoreBoard">Ver Puntaje!</button>
+           <button id="playAgain">Volver a Jugar!</button>
+           </dialog>`;
     return message;
+}
+
+export function scoreBoard() {
+    let board = `<div id="scoreboard">
+           <h1>¡Puntajes!</h1>
+           <p></p>
+           <p></>
+           </div>`;
+    return board;
 }

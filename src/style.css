@@ -270,6 +270,10 @@ button[id^="option"]:hover{
     [id^='level'] div img { /* front-card back-card */
         padding: 15px;
     }
+    #ms {
+        width: 300px !important;
+        transform: translate(125%,130%) !important;
+    }
 }
 [id^='level']{ /* containers de los juegos */
     perspective: 1000px;
@@ -298,4 +302,7 @@ button[id^="option"]:hover{
 }
 #ms::backdrop {
     background-color: RGBA(0, 0, 0, 0.5);
+}
+#scoreboard{
+    background-color: #D82148;
 }

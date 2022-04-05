@@ -1,5 +1,5 @@
-import { slicedData } from '../main.js'
-import { winnerMessage } from './CreateCards.js'
+import { slicedData } from '../main.js';
+import { winnerMessage, scoreBoard } from './CreateCards.js';
 // variables
 let flippedCard = false;
 let firstCard, secondCard;
@@ -68,11 +68,14 @@ function gameOver() {
         setTimeout(() => {
             document.getElementById('pageTwo').innerHTML+=winnerMessage();
             document.getElementById('ms').showModal();
-            document.getElementById('close').addEventListener('click',()=>{
+            document.getElementById('scoreBoard').addEventListener('click',()=>{
                 document.getElementById('ms').remove();
-                // location.reload();
-                // volver a jugador
-                // elegir otro tema
+                document.getElementById('pageTwo').innerHTML = '';
+                document.getElementById('pageTwo').innerHTML += scoreBoard(); // ver puntaje
+            });
+            document.getElementById('playAgain').addEventListener('click',()=>{
+                document.getElementById('ms').remove();
+                location.reload(); // elegir otro tema
             });
         }, 1000);
     }
