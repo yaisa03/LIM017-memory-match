@@ -1,6 +1,6 @@
 import { createCards, sliceData } from './components/CreateCards.js';
 import { gameThemes } from './components/GameThemes.js'; // contiene la data de los juegos
-import { flipCard } from './components/GameLogic.js';
+import { flipCard, audioController } from './components/GameLogic.js';
 // contiene las opciones de juego
 const gameOptions = document.querySelectorAll('div[id^="game"]');
 // boton para volver a inicio
@@ -49,6 +49,7 @@ export function showGamesByLevel() {
             titlePage2.innerText = gameTitle;
             gameContainer.style.display = "";
             gameContainer.innerHTML = createCards(slicedData, gameImage);
+            audioController.startMusic();
             flipCards();
             return slicedData;
         })
@@ -62,7 +63,7 @@ function flipCards() {
         card.addEventListener('click', flipCard);
     });
 }
-// inicializar funcuones
+// inicializar funciones
 chooseGameTheme();
 showGamesByLevel();
 
