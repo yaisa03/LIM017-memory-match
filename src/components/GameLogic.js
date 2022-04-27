@@ -1,8 +1,10 @@
 import { slicedData } from '../main.js';
 import { winnerMessage, scoreBoard } from './CreateCards.js';
+import { AudioController } from './audioController.js'
 // variables
 let flippedCard = false;
 let firstCard, secondCard;
+export let audioController = new AudioController();
 let lockBoard = false; // evitar que se giren mas de 2 cartas
 let totalClicks = 0;
 let correctCards = 0;
@@ -10,21 +12,21 @@ const flippedCards = document.getElementById('flips');
 
 export function flipCard() {
     if (lockBoard) return; // si el tablero esta bloqueado
-    if (this === firstCard) return; // si se da click 2 veces sobre la misma carta
-    // si this es igual a la 1ra carta no corre la funcion
+    if (this === firstCard) return; // doble click, si this es igual a la 1ra carta no corre la funcion
     this.classList.add('flipped');
-    if (!flippedCard) {
-        // primer click
+    if (!flippedCard) { // primer click
         flippedCard = true;
         firstCard = this;
         totalClicks++;
         flippedCards.innerHTML = totalClicks;
+        audioController.flip();
 
     } else { // segundo click
         // flippedCard = false;
         secondCard = this;
         totalClicks++;
         flippedCards.innerHTML = totalClicks;
+        audioController.flip();
         // ver si son match
         checkMatch();
     }
@@ -41,6 +43,7 @@ function disableCards() {
     // console.log('es un match');
     resetBoard();
     correctCards += 2;
+    audioController.match();
     gameOver();
     return correctCards;
 }
@@ -65,13 +68,13 @@ function resetBoard() { //es6 destructuring assignment
 function gameOver() {
     const data = slicedData.concat(slicedData)
     if (data.length === correctCards) {
+        audioController.victory();
         setTimeout(() => {
             document.getElementById('pageTwo').innerHTML+=winnerMessage();
             document.getElementById('ms').showModal();
             document.getElementById('scoreBoard').addEventListener('click',()=>{
                 document.getElementById('ms').remove();
-                document.getElementById('pageTwo').innerHTML = '';
-                document.getElementById('pageTwo').innerHTML += scoreBoard(); // ver puntaje
+                document.getElementById('pageTwo').innerHTML = scoreBoard(); // ver puntaje
             });
             document.getElementById('playAgain').addEventListener('click',()=>{
                 document.getElementById('ms').remove();

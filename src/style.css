@@ -8,9 +8,6 @@ body{
     width: 100vw;
     background-color: #BB9981;
     background-image: url(images/fondoStars.gif);
-    /* background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -272,7 +269,7 @@ button[id^="option"]:hover{
     }
     #ms {
         width: 300px !important;
-        transform: translate(125%,130%) !important;
+        transform: translate(170%,130%) !important;
     }
 }
 [id^='level']{ /* containers de los juegos */
