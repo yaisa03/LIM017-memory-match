@@ -1,10 +1,10 @@
-import { createCards, sliceData } from './components/CreateElements.js';
+/* istanbul ignore file */
+import { createCards,winnerMessage, scoreBoard, timeOutMessage} from './components/CreateElements.js';
 import { gameThemes } from './components/GameThemes.js'; // contiene la data de los juegos
-import { flipCard, audioController, timeOut } from './components/GameLogic.js';
+import { flipCard, audioController, sliceData, correctCards } from './components/GameLogic.js';
+
 // contiene las opciones de juego
 const gameOptions = document.querySelectorAll('div[id^="game"]');
-// boton para volver a inicio
-const homeButton = document.getElementById('home');
 // Paginas
 const pageOne = document.getElementById('pageOne');
 const pageTwo = document.getElementById('pageTwo');
@@ -14,16 +14,18 @@ const titlePage2 = document.getElementById('titlePage2');
 const selectLevel = document.getElementById('selectLevel'); // contenedor
 const levelSelected = document.querySelectorAll('[id^="option"]') // botones de cada opcion
 const timeOverByLevel = document.getElementById('time'); // Contador por nivel
+let setTimeOver = document.getElementById('time'); // contador de tiempo restante
 const flippedCards = document.getElementById('flips');
 let totalClicks = 0; // cantidad de cartas giradas
 // contenedores de los niveles del juego 
 const gameContainers = document.querySelectorAll('div[id^="level"]');
 // variables del tema elegido
 let gameData, gameImage, gameTitle, slicedData;
-// boton inicio
-homeButton.addEventListener('click', () => {
-    location.reload();
-});
+
+// boton para volver a inicio
+const homeButton = document.getElementById('home');
+homeButton.addEventListener('click', () => location.reload());
+
 // elegir tema del juego
 export function chooseGameTheme() {
     gameOptions.forEach(e => {
@@ -68,6 +70,7 @@ function flipCards() {
         card.addEventListener('click', flipCard);
         card.addEventListener('click', flippedCardsCounter);
         card.addEventListener('click', timeOut);
+        card.addEventListener('click', gameOver);
     });
 }
 // contador de cartas giradas
@@ -86,8 +89,48 @@ function setTimeout(i) {
         timeOverByLevel.innerHTML = 120;
     }
 }
+// funcion para terminar el juego cuando todas las cartas son correctas
+export function gameOver() {
+    const data = slicedData.concat(slicedData)
+    if (data.length === correctCards) {
+        audioController.victory();
+            document.getElementById('pageTwo').innerHTML += winnerMessage;
+            document.getElementById('ms').showModal();
+            clearTimeout(timeOut());
+            document.getElementById('scoreBoard').addEventListener('click', () => {
+                document.getElementById('ms').remove();
+                document.getElementById('pageTwo').innerHTML = scoreBoard(); // ver puntaje
+            });
+            document.getElementById('playAgain').addEventListener('click', () => {
+                document.getElementById('ms').remove();
+                location.reload(); // elegir otro tema
+            });
+    }
+}
+
+// funcion para terminar el juego cuando se acaba el tiempo
+export const timeOut = () => {
+    let timeLeft = setTimeOver.innerHTML;
+    setInterval(() => {
+        timeLeft--;
+        setTimeOver.innerHTML = timeLeft;
+        if (timeLeft === 0) {
+            setTimeOver.innerHTML = 0;
+            audioController.gameOver();
+            document.getElementById('pageTwo').innerHTML += timeOutMessage;
+            document.getElementById('ms').showModal();
+            document.getElementById('playAgain').addEventListener('click', () => {
+                document.getElementById('ms').remove();
+                location.reload(); // elegir otro tema
+            });
+        }
+    }, 1000);
+}
+
 // inicializar funciones
 chooseGameTheme();
 showGamesByLevel();
 
 export { slicedData };
+
+

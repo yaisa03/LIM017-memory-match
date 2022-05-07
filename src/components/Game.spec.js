@@ -1,12 +1,10 @@
-import { createCards, shuffle, sliceData } from "./CreateCards.js";
+import { createCards } from "./CreateElements.js";
+import { shuffle, sliceData } from "./GameLogic.js";
 import ghibli from '../data/ghibli/ghibli.js';
 const dataGhibli = ghibli.items;
 const imageGameGhibli = "images/gameGhibli.png";
 
 describe('CreateCards', () => {
-  it('it should be a function', () => {
-    expect(typeof createCards).toBe('function');
-  });
   it('it should return a string', () => {
     expect(typeof createCards(dataGhibli, imageGameGhibli)).toBe('string');
   });

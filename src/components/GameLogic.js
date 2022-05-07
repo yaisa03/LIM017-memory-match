@@ -1,5 +1,4 @@
-import { slicedData } from '../main.js';
-import { winnerMessage, scoreBoard, timeOutMessage } from './CreateElements.js';
+// import { gameOver } from '../main.js';
 import { AudioController } from './audioController.js'
 // variables
 let flippedCard = false;
@@ -7,7 +6,6 @@ let firstCard, secondCard;
 export let audioController = new AudioController();
 let lockBoard = false; // evitar que se giren mas de 2 cartas
 let correctCards = 0;
-let setTimeOver = document.getElementById('time');
 
 export function flipCard() {
     if (lockBoard) return; // si el tablero esta bloqueado
@@ -39,7 +37,6 @@ function disableCards() {
     resetBoard();
     correctCards += 2;
     audioController.match();
-    gameOver();
     return correctCards;
 }
 
@@ -60,40 +57,27 @@ function resetBoard() { //es6 destructuring assignment
     [firstCard, secondCard] = [null, null];
 }
 
-function gameOver() {
-    const data = slicedData.concat(slicedData)
-    if (data.length === correctCards) {
-        audioController.victory();
-        setTimeout(() => {
-            document.getElementById('pageTwo').innerHTML += winnerMessage();
-            document.getElementById('ms').showModal();
-            clearTimeout(timeOut());
-            document.getElementById('scoreBoard').addEventListener('click', () => {
-                document.getElementById('ms').remove();
-                document.getElementById('pageTwo').innerHTML = scoreBoard(); // ver puntaje
-            });
-            document.getElementById('playAgain').addEventListener('click', () => {
-                document.getElementById('ms').remove();
-                location.reload(); // elegir otro tema
-            });
-        }, 1000);
+// shuffle
+export function shuffle(a) { //Fisher–Yates shuffle
+    for (let i = a.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        const y = a[randomIndex]
+        a[randomIndex] = a[i]
+        a[i] = y
     }
+    return a;
+}
+// cantidad de cartas por nivel de juego
+export function sliceData(gameLevel, gameData) {
+    let slicedData;
+    if (gameLevel == 0) {
+        slicedData = shuffle(gameData).slice(0, 3);
+    } else if (gameLevel == 1) {
+        slicedData = shuffle(gameData).slice(0, 6);
+    } else {
+        slicedData = shuffle(gameData).slice(0, 9);
+    }
+    return slicedData;
 }
 
-export const timeOut = () => {
-    let timeLeft = setTimeOver.innerHTML;
-    setInterval(() => {
-        timeLeft--;
-        setTimeOver.innerHTML = timeLeft;
-        if (timeLeft === 0) {
-            setTimeOver.innerHTML = 0;
-            audioController.gameOver();
-            document.getElementById('pageTwo').innerHTML += timeOutMessage();
-            document.getElementById('ms').showModal();
-            document.getElementById('playAgain').addEventListener('click', () => {
-                document.getElementById('ms').remove();
-                location.reload(); // elegir otro tema
-            });
-        }
-    }, 1000);
-}
+export { correctCards };

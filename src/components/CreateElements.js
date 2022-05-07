@@ -1,3 +1,5 @@
+import { shuffle } from './GameLogic.js';
+
 //funcion que crea las cartas
 export function createCards(newData, gameImage) {
     let dataConcat = newData.concat(newData); // dos veces la data
@@ -11,45 +13,17 @@ export function createCards(newData, gameImage) {
     });
     return cardsDiv;
 }
-// shuffle
-export function shuffle(a) { //Fisher–Yates shuffle
-    for (let i = a.length - 1; i > 0; i--) {
-        const randomIndex = Math.floor(Math.random() * (i + 1));
-        const y = a[randomIndex]
-        a[randomIndex] = a[i]
-        a[i] = y
-    }
-    return a;
-}
-// cantidad de cartas por nivel de juego
-export function sliceData(gameLevel, gameData) {
-    let slicedData;
-    if (gameLevel == 0) {
-        slicedData = shuffle(gameData).slice(0, 3);
-    } else if (gameLevel == 1) {
-        slicedData = shuffle(gameData).slice(0, 6);
-    } else {
-        slicedData = shuffle(gameData).slice(0, 9);
-    }
-    return slicedData;
-}
 
-export function winnerMessage() {
-    let message = `<dialog id="ms">
+export const winnerMessage = `<dialog id="ms">
            <h2>¡Ganaste!</h2>
            <button id="scoreBoard">Ver Puntaje!</button>
            <button id="playAgain">Volver a Jugar!</button>
            </dialog>`;
-    return message;
-}
 
-export function timeOutMessage() {
-    let message = `<dialog id="ms">
+export const timeOutMessage = `<dialog id="ms">
            <h2>Se acabo el tiempo :(</h2>
            <button id="playAgain">Volver a Jugar!</button>
            </dialog>`;
-    return message;
-}
 
 export function scoreBoard() {
     let board = `<div id="scoreboard">
