@@ -1,36 +1,29 @@
-import { slicedData } from '../main.js';
-import { winnerMessage, scoreBoard } from './CreateCards.js';
+// import { gameOver } from '../main.js';
 import { AudioController } from './audioController.js'
 // variables
 let flippedCard = false;
 let firstCard, secondCard;
 export let audioController = new AudioController();
 let lockBoard = false; // evitar que se giren mas de 2 cartas
-let totalClicks = 0;
 let correctCards = 0;
-const flippedCards = document.getElementById('flips');
 
 export function flipCard() {
     if (lockBoard) return; // si el tablero esta bloqueado
     if (this === firstCard) return; // doble click, si this es igual a la 1ra carta no corre la funcion
+
     this.classList.add('flipped');
     if (!flippedCard) { // primer click
         flippedCard = true;
         firstCard = this;
-        totalClicks++;
-        flippedCards.innerHTML = totalClicks;
         audioController.flip();
-
+        // timeOut();
     } else { // segundo click
         // flippedCard = false;
         secondCard = this;
-        totalClicks++;
-        flippedCards.innerHTML = totalClicks;
         audioController.flip();
         // ver si son match
         checkMatch();
     }
-    return totalClicks;
 }
 
 function checkMatch() { // operador ternario
@@ -44,7 +37,6 @@ function disableCards() {
     resetBoard();
     correctCards += 2;
     audioController.match();
-    gameOver();
     return correctCards;
 }
 
@@ -65,21 +57,27 @@ function resetBoard() { //es6 destructuring assignment
     [firstCard, secondCard] = [null, null];
 }
 
-function gameOver() {
-    const data = slicedData.concat(slicedData)
-    if (data.length === correctCards) {
-        audioController.victory();
-        setTimeout(() => {
-            document.getElementById('pageTwo').innerHTML+=winnerMessage();
-            document.getElementById('ms').showModal();
-            document.getElementById('scoreBoard').addEventListener('click',()=>{
-                document.getElementById('ms').remove();
-                document.getElementById('pageTwo').innerHTML = scoreBoard(); // ver puntaje
-            });
-            document.getElementById('playAgain').addEventListener('click',()=>{
-                document.getElementById('ms').remove();
-                location.reload(); // elegir otro tema
-            });
-        }, 1000);
+// shuffle
+export function shuffle(a) { //Fisher–Yates shuffle
+    for (let i = a.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        const y = a[randomIndex]
+        a[randomIndex] = a[i]
+        a[i] = y
     }
+    return a;
 }
+// cantidad de cartas por nivel de juego
+export function sliceData(gameLevel, gameData) {
+    let slicedData;
+    if (gameLevel == 0) {
+        slicedData = shuffle(gameData).slice(0, 3);
+    } else if (gameLevel == 1) {
+        slicedData = shuffle(gameData).slice(0, 6);
+    } else {
+        slicedData = shuffle(gameData).slice(0, 9);
+    }
+    return slicedData;
+}
+
+export { correctCards };
