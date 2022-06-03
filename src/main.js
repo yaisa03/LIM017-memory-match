@@ -1,5 +1,4 @@
-/* istanbul ignore file */
-import { createCards,winnerMessage, scoreBoard, timeOutMessage} from './components/CreateElements.js';
+import { createCards, winnerMessage, scoreBoard, timeOutMessage } from './components/CreateElements.js';
 import { gameThemes } from './components/GameThemes.js'; // contiene la data de los juegos
 import { flipCard, audioController, sliceData, correctCards } from './components/GameLogic.js';
 
@@ -31,13 +30,13 @@ export function chooseGameTheme() {
     gameOptions.forEach(e => {
         e.addEventListener('click', () => {
             for (let i = 0; i < gameOptions.length; i++) {
-                if (gameOptions[i] === e) { // i es la tema de juego elegodo
+               if (gameOptions[i] === e) {  /// i es la tema de juego elegodo
                     selectLevel.style.display = "";
                     gameData = gameThemes[i].data;
                     gameImage = gameThemes[i].image;
                     gameTitle = gameThemes[i].title;
-                    // gameOptions[i].style.display = "none";
-                } else { // temas de juego no elegidos
+                    gameOptions[i].style.display = "none";
+               } else { // temas de juego no elegidos
                     gameOptions[i].style.display = "none";
                 }
             }
@@ -94,37 +93,40 @@ export function gameOver() {
     const data = slicedData.concat(slicedData)
     if (data.length === correctCards) {
         audioController.victory();
-            document.getElementById('pageTwo').innerHTML += winnerMessage;
-            document.getElementById('ms').showModal();
-            clearTimeout(timeOut());
-            document.getElementById('scoreBoard').addEventListener('click', () => {
-                document.getElementById('ms').remove();
-                document.getElementById('pageTwo').innerHTML = scoreBoard(); // ver puntaje
-            });
-            document.getElementById('playAgain').addEventListener('click', () => {
-                document.getElementById('ms').remove();
-                location.reload(); // elegir otro tema
-            });
+        document.getElementById('pageTwo').innerHTML += winnerMessage;
+        document.getElementById('ms').showModal();
+        document.getElementById('scoreBoard').addEventListener('click', () => {
+            document.getElementById('ms').remove();
+            document.getElementById('pageTwo').innerHTML = scoreBoard(); // ver puntaje
+        });
+        document.getElementById('playAgain').addEventListener('click', () => {
+            document.getElementById('ms').remove();
+            location.reload(); // elegir otro tema
+        });
     }
 }
 
 // funcion para terminar el juego cuando se acaba el tiempo
 export const timeOut = () => {
+    const data = slicedData.concat(slicedData)
     let timeLeft = setTimeOver.innerHTML;
-    setInterval(() => {
+    const timeOver = setInterval(() => {
         timeLeft--;
         setTimeOver.innerHTML = timeLeft;
         if (timeLeft === 0) {
-            setTimeOver.innerHTML = 0;
             audioController.gameOver();
             document.getElementById('pageTwo').innerHTML += timeOutMessage;
-            document.getElementById('ms').showModal();
-            document.getElementById('playAgain').addEventListener('click', () => {
-                document.getElementById('ms').remove();
+            document.getElementById('msLosser').showModal();
+            document.getElementById('playAgainBtn').addEventListener('click', () => {
+                document.getElementById('msLosser').remove();
                 location.reload(); // elegir otro tema
             });
         }
     }, 1000);
+    if (data.length === correctCards) {
+        clearTimeout(timeOver);
+    }
+    return timeOver;
 }
 
 // inicializar funciones

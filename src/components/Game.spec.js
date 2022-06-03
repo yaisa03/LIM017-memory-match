@@ -1,5 +1,6 @@
 import { createCards } from "./CreateElements.js";
-import { shuffle, sliceData } from "./GameLogic.js";
+import { shuffle, sliceData, flipCard } from "./GameLogic.js";
+
 import ghibli from '../data/ghibli/ghibli.js';
 const dataGhibli = ghibli.items;
 const imageGameGhibli = "images/gameGhibli.png";
@@ -17,9 +18,6 @@ describe('CreateCards', () => {
 });
 
 describe('shuffle', () => {
-  it('it should be a function', () => {
-    expect(typeof shuffle).toBe('function');
-  });
   it('it should return the data', () => {
     expect(shuffle(dataGhibli)).toEqual(
       expect.arrayContaining(dataGhibli));
@@ -27,9 +25,6 @@ describe('shuffle', () => {
 });
 
 describe('sliceData', () => {
-  it('it should be a function', () => {
-    expect(typeof sliceData).toBe('function');
-  });
   it('to have 3 elements', () => {
     expect(sliceData(0, dataGhibli)).toHaveLength(3);
   });
@@ -38,5 +33,11 @@ describe('sliceData', () => {
   });
   it('to have 9 elements', () => {
     expect(sliceData(2, dataGhibli)).toHaveLength(9);
+  });
+});
+
+describe('flipCard', () => {
+  it('it should return', () => {
+    expect(flipCard()).toBeUndefined();
   });
 });

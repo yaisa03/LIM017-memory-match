@@ -1,9 +1,10 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     height: 100vh;
     width: 100vw;
     background-color: black;
@@ -12,7 +13,8 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 }
-header{
+
+header {
     height: 9vh;
     width: 100%;
     background-color: #D82148;
@@ -21,29 +23,34 @@ header{
     align-items: center;
     justify-content: center;
 }
-nav{
+
+nav {
     width: 95%;
     height: 100%;
 }
-ul{
+
+ul {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
-li{
+
+li {
     list-style: none;
     color: #fff;
     font-size: 1.2rem;
     padding: 3%;
 }
-li:hover{
+
+li:hover {
     border-radius: 3px;
-    color:#1a0413;
+    color: #1a0413;
     background-color: #BB9981
 }
-#pageOne{
+
+#pageOne {
     height: 80%;
     width: 100%;
     display: flex;
@@ -52,20 +59,25 @@ li:hover{
     justify-content: center;
     text-align: center;
 }
-h1{
+
+h1 {
     font-size: 2.5rem;
-    color:rgb(228, 217, 235);
-    text-shadow:#1a0413  6px 4px 4px;
+    color: rgb(228, 217, 235);
+    text-shadow: #1a0413 6px 4px 4px;
 }
-#containerGames{
+
+#containerGames {
     height: 80%;
     width: 75%;
     margin: 15px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-div[id^="game"]{
+
+div[id^="game"] {
     height: 30%;
+    width: 90%;
     margin: 10px;
     border: 3px solid #fff;
     background-color: #151D3B;
@@ -78,54 +90,73 @@ div[id^="game"]{
     justify-content: center;
     transform: scale(0.98);
 }
-div[id^="game"]:hover{
+
+div[id^="game"]:hover {
     border: 3px solid #D82148;
     transform: scale(1);
 }
-div[id^="game"] img{
+
+div[id^="game"] img {
     height: 80%;
     width: 70%;
 }
-button[id^="option"]{
-    width: 25%;
+
+ #selectLevel {
+        width: 100%;
+        height: fit-content;
+        display: contents;
+    }
+
+button[id^="option"] {
+    width: 50%;
     height: 45px;
     margin: 8px;
     color: #fff;
     border: 2px solid #fff;
     box-shadow: #D82148 4px 3px 3px;
     border-radius: 10px;
-    background-color: #151D3B ;
+    background-color: #151D3B;
     opacity: 0.9;
     transform: scale(0.97);
 }
-button[id^="option"]:hover{
+
+button[id^="option"]:hover {
     transform: scale(1);
     border: 2px solid #D82148;
 }
-#scoreBoard, #playAgain{
+
+#scoreBoard,
+#playAgain,
+#playAgainBtn {
     margin-top: 10px;
     border-radius: 5px;
     height: 25px;
     width: 110px;
 }
+
 @media (min-width: 600px) {
-    header{
+    header {
         height: 10vh;
     }
-    body{
+
+    body {
         background-image: url(images/fondoStars.gif);
     }
-    li{
+
+    li {
         font-size: 1.5rem;
         padding: 1%;
     }
-    #pageOne{
+
+    #pageOne {
         padding: 50px;
     }
-    h1{
+
+    h1 {
         font-size: 3.5rem;
     }
-    #containerGames{
+
+    #containerGames {
         height: 100%;
         width: 90%;
         display: flex;
@@ -133,7 +164,8 @@ button[id^="option"]:hover{
         align-items: center;
         justify-content: center;
     }
-    div[id^="game"]{
+
+    div[id^="game"] {
         height: 50%;
         width: 30%;
         margin: 18px;
@@ -142,22 +174,21 @@ button[id^="option"]:hover{
         align-items: center;
         justify-content: center;
     }
-    div[id^="game"]:hover{
+
+    div[id^="game"]:hover {
         height: 52%;
         width: 32%;
     }
-    div[id^="game"] img{
+
+    div[id^="game"] img {
         height: 60%;
     }
-    #selectLevel{
-        width: 100%;
-    }
-    button[id^="option"]{
+
+    button[id^="option"] {
         width: 15%;
-        height: 40px;
-        margin: 8px;
     }
 }
+
 /*pagina 2*/
 #pageTwo {
     height: 85%;
@@ -168,14 +199,16 @@ button[id^="option"]:hover{
     align-items: center;
     text-align: center;
 }
-.infoContainer{
+
+.infoContainer {
     font-size: 1.2rem;
-    color:rgb(228, 217, 235);
-    text-shadow: #1a0413  6px 4px 4px;
+    color: rgb(228, 217, 235);
+    text-shadow: #1a0413 6px 4px 4px;
     display: flex;
     justify-content: space-between;
     width: 80%;
 }
+
 #levelOne {
     height: 50%;
     width: 85%;
@@ -185,7 +218,9 @@ button[id^="option"]:hover{
     justify-content: space-around;
     align-items: center;
 }
-#levelOne div { /* .memorycard */
+
+#levelOne div {
+    /* .memorycard */
     width: 30%;
     height: 43%;
     display: flex;
@@ -195,13 +230,16 @@ button[id^="option"]:hover{
     border: 3px solid #D82148;
     border-radius: 10px;
 }
-[id^='level'] div img { /* front-card back-card */
+
+[id^='level'] div img {
+    /* front-card back-card */
     height: 100%;
     width: 100%;
     position: absolute;
     padding: 10px;
     border-radius: 8px;
 }
+
 #levelTwo {
     height: 100%;
     width: 85%;
@@ -211,7 +249,9 @@ button[id^="option"]:hover{
     justify-content: space-around;
     align-items: center;
 }
-#levelTwo div { /* .memorycard */
+
+#levelTwo div {
+    /* .memorycard */
     width: 30%;
     height: 23%;
     display: flex;
@@ -221,6 +261,7 @@ button[id^="option"]:hover{
     border: 3px solid #D82148;
     border-radius: 10px;
 }
+
 #levelThree {
     height: 100%;
     width: 75%;
@@ -230,7 +271,9 @@ button[id^="option"]:hover{
     justify-content: space-around;
     align-items: center;
 }
-#levelThree div { /* .memorycard */
+
+#levelThree div {
+    /* .memorycard */
     width: 30%;
     height: 15%;
     display: flex;
@@ -240,72 +283,110 @@ button[id^="option"]:hover{
     border: 3px solid #D82148;
     border-radius: 10px;
 }
+
 @media (min-width: 768px) {
-    .infoContainer{
+    .infoContainer {
         width: 40%;
         font-size: 1.5rem;
         margin-top: 10px;
     }
+
     #levelOne {
         height: 80%;
         width: 45%;
     }
-    #levelOne div { /* .memorycard */
+
+    #levelOne div {
+        /* .memorycard */
         width: 28%;
         height: 40%;
     }
+
     #levelTwo {
         height: 75%;
         width: 80%;
     }
-    #levelTwo div { /* .memorycard */
+
+    #levelTwo div {
+        /* .memorycard */
         width: 15%;
         height: 40%;
     }
+
     #levelThree {
         height: 80%;
         width: 80%;
     }
-    #levelThree div { /* .memorycard */
+
+    #levelThree div {
+        /* .memorycard */
         width: 15%;
         height: 30%;
     }
-    [id^='level'] div img { /* front-card back-card */
+
+    [id^='level'] div img {
+        /* front-card back-card */
         padding: 15px;
     }
+
     #ms {
         width: 300px !important;
-        transform: translate(170%,130%) !important;
+        transform: translate(170%, 130%) !important;
+    }
+
+    #msLosser {
+        width: 300px !important;
+        transform: translate(170%, 130%) !important;
     }
 }
-[id^='level']{ /* containers de los juegos */
+
+[id^='level'] {
+    /* containers de los juegos */
     perspective: 1000px;
 }
-.memorycard{
+
+.memorycard {
     transform-style: preserve-3d;
     transition: transform .5s;
 }
-.memorycard.flipped{
-    transform:rotateY(180deg);
+
+.memorycard.flipped {
+    transform: rotateY(180deg);
 }
-.front-card, .back-card{
+
+.front-card,
+.back-card {
     backface-visibility: hidden;
 }
-.front-card{
-    transform:rotateY(180deg);
+
+.front-card {
+    transform: rotateY(180deg);
 }
+
 #ms {
     height: 30%;
     width: 250px;
-    transform: translate(40%,120%);
+    transform: translate(40%, 120%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
+#msLosser {
+    height: 30%;
+    width: 250px;
+    transform: translate(40%, 120%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #ms::backdrop {
     background-color: RGBA(0, 0, 0, 0.5);
 }
-#scoreboard{
+
+#scoreboard {
     background-color: #D82148;
 }

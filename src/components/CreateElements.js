@@ -20,10 +20,11 @@ export const winnerMessage = `<dialog id="ms">
            <button id="playAgain">Volver a Jugar!</button>
            </dialog>`;
 
-export const timeOutMessage = `<dialog id="ms">
+export const timeOutMessage = `<dialog id="msLosser">
            <h2>Se acabo el tiempo :(</h2>
-           <button id="playAgain">Volver a Jugar!</button>
+           <button id="playAgainBtn">Volver a Jugar!</button>
            </dialog>`;
+
 
 export function scoreBoard() {
     let board = `<div id="scoreboard">

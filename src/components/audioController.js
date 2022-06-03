@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export class AudioController {
     constructor() {
         this.bgMusic = new Audio('../sounds/bgMusic.mp3');
