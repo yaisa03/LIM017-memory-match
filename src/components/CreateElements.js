@@ -14,23 +14,12 @@ export function createCards(newData, gameImage) {
     return cardsDiv;
 }
 
-export const winnerMessage = `<dialog id="ms">
-           <h2>¡Ganaste!</h2>
-           <button id="scoreBoard">Ver Puntaje!</button>
-           <button id="playAgain">Volver a Jugar!</button>
-           </dialog>`;
-
-export const timeOutMessage = `<dialog id="msLosser">
-           <h2>Se acabo el tiempo :(</h2>
+export function endMessage(time, cardsFlipped) {
+    const endGame = `<div id="endGameMessage">
+           <h1>Tu tiempo fue</h1>
+           <p class='endTime'>${time}</p>
+           <p class='endTime cards'>Giraste ${cardsFlipped} cartas</p>
            <button id="playAgainBtn">Volver a Jugar!</button>
-           </dialog>`;
-
-
-export function scoreBoard() {
-    let board = `<div id="scoreboard">
-           <h1>¡Puntajes!</h1>
-           <p></p>
-           <p></>
            </div>`;
-    return board;
+    return endGame;
 }

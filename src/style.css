@@ -101,11 +101,11 @@ div[id^="game"] img {
     width: 70%;
 }
 
- #selectLevel {
-        width: 100%;
-        height: fit-content;
-        display: contents;
-    }
+#selectLevel {
+    width: 100%;
+    height: fit-content;
+    display: contents;
+}
 
 button[id^="option"] {
     width: 50%;
@@ -123,15 +123,6 @@ button[id^="option"] {
 button[id^="option"]:hover {
     transform: scale(1);
     border: 2px solid #D82148;
-}
-
-#scoreBoard,
-#playAgain,
-#playAgainBtn {
-    margin-top: 10px;
-    border-radius: 5px;
-    height: 25px;
-    width: 110px;
 }
 
 @media (min-width: 600px) {
@@ -219,8 +210,7 @@ button[id^="option"]:hover {
     align-items: center;
 }
 
-#levelOne div {
-    /* .memorycard */
+#levelOne div { /* .memorycard */
     width: 30%;
     height: 43%;
     display: flex;
@@ -231,8 +221,7 @@ button[id^="option"]:hover {
     border-radius: 10px;
 }
 
-[id^='level'] div img {
-    /* front-card back-card */
+[id^='level'] div img { /* front-card back-card */
     height: 100%;
     width: 100%;
     position: absolute;
@@ -250,8 +239,7 @@ button[id^="option"]:hover {
     align-items: center;
 }
 
-#levelTwo div {
-    /* .memorycard */
+#levelTwo div { /* .memorycard */
     width: 30%;
     height: 23%;
     display: flex;
@@ -272,8 +260,7 @@ button[id^="option"]:hover {
     align-items: center;
 }
 
-#levelThree div {
-    /* .memorycard */
+#levelThree div { /* .memorycard */
     width: 30%;
     height: 15%;
     display: flex;
@@ -296,8 +283,7 @@ button[id^="option"]:hover {
         width: 45%;
     }
 
-    #levelOne div {
-        /* .memorycard */
+    #levelOne div { /* .memorycard */
         width: 28%;
         height: 40%;
     }
@@ -307,8 +293,7 @@ button[id^="option"]:hover {
         width: 80%;
     }
 
-    #levelTwo div {
-        /* .memorycard */
+    #levelTwo div { /* .memorycard */
         width: 15%;
         height: 40%;
     }
@@ -318,30 +303,18 @@ button[id^="option"]:hover {
         width: 80%;
     }
 
-    #levelThree div {
-        /* .memorycard */
+    #levelThree div { /* .memorycard */
         width: 15%;
         height: 30%;
     }
 
-    [id^='level'] div img {
-        /* front-card back-card */
+    [id^='level'] div img { /* front-card back-card */
         padding: 15px;
     }
 
-    #ms {
-        width: 300px !important;
-        transform: translate(170%, 130%) !important;
-    }
-
-    #msLosser {
-        width: 300px !important;
-        transform: translate(170%, 130%) !important;
-    }
 }
 
-[id^='level'] {
-    /* containers de los juegos */
+[id^='level'] { /* containers de los juegos */
     perspective: 1000px;
 }
 
@@ -363,30 +336,24 @@ button[id^="option"]:hover {
     transform: rotateY(180deg);
 }
 
-#ms {
-    height: 30%;
-    width: 250px;
-    transform: translate(40%, 120%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+#endGameMessage {
+  background-color: #D82148;
+  border: 2px solid rgb(228, 217, 235);
+  padding: 10px;
+  border-radius: 10px;
 }
 
-#msLosser {
-    height: 30%;
-    width: 250px;
-    transform: translate(40%, 120%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.endTime {
+    font-size: 2.5rem;
+    color: rgb(228, 217, 235);
+    text-shadow: #1a0413 6px 4px 4px;
 }
 
-#ms::backdrop {
-    background-color: RGBA(0, 0, 0, 0.5);
-}
-
-#scoreboard {
-    background-color: #D82148;
+#playAgainBtn {
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: #151D3B 4px 3px 3px;
+    height: 45px;
+    width: 150px;
+    font-size: large;
 }
