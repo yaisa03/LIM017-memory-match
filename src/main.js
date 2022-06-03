@@ -69,7 +69,6 @@ function flipCards() { // cartas de juego
     cards.forEach(card => {
         card.addEventListener('click', flipCard);
         card.addEventListener('click', flippedCardsCounter);
-        //card.addEventListener('click', timeOut);
         card.addEventListener('click', gameOver);
     });
 }
