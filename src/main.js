@@ -85,7 +85,7 @@ export function gameOver() {
     if (data.length === correctCards) {
         audioController.victory();
         document.getElementById('pageTwo').innerHTML = endMessage(mAux + ":" + sAux, totalClicks);
-        document.getElementById('playAgain').addEventListener('click', () => location.reload()); // elegir otro tema
+        document.getElementById('playAgainBtn').addEventListener('click', () => location.reload()); // elegir otro tema
     }
 }
 

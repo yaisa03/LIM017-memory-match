@@ -23,11 +23,11 @@ export function flipCard() {
     }
 }
 
-function checkMatch() { // operador ternario
+export function checkMatch() { // operador ternario
     (firstCard.id === secondCard.id) ? disableCards() : unflipCards();
 }
 
-function disableCards() { // es un match
+export function disableCards() { // es un match
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
     resetBoard();
@@ -36,7 +36,7 @@ function disableCards() { // es un match
     return correctCards;
 }
 
-function unflipCards() { //no es un match
+export function unflipCards() { //no es un match
     lockBoard = true; //lock the board
 
     setTimeout(() => {
@@ -47,7 +47,7 @@ function unflipCards() { //no es un match
     }, 1500);
 }
 
-function resetBoard() { //es6 destructuring assignment
+export function resetBoard() { //es6 destructuring assignment
     [flippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }
