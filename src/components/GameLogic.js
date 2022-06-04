@@ -1,4 +1,3 @@
-// import { gameOver } from '../main.js';
 import { AudioController } from './audioController.js'
 // variables
 let flippedCard = false;
@@ -16,43 +15,39 @@ export function flipCard() {
         flippedCard = true;
         firstCard = this;
         audioController.flip();
-        // timeOut();
     } else { // segundo click
         // flippedCard = false;
         secondCard = this;
         audioController.flip();
-        // ver si son match
-        checkMatch();
+        checkMatch(); // ver si son match
     }
 }
 
-function checkMatch() { // operador ternario
+export function checkMatch() { // operador ternario
     (firstCard.id === secondCard.id) ? disableCards() : unflipCards();
 }
 
-function disableCards() {
+export function disableCards() { // es un match
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    // console.log('es un match');
     resetBoard();
     correctCards += 2;
     audioController.match();
     return correctCards;
 }
 
-function unflipCards() {
+export function unflipCards() { //no es un match
     lockBoard = true; //lock the board
 
     setTimeout(() => {
         firstCard.classList.remove('flipped');
         secondCard.classList.remove('flipped');
-        // console.log('no es un match');
         // lockBoard = false; // unlock the board
         resetBoard();
     }, 1500);
 }
 
-function resetBoard() { //es6 destructuring assignment
+export function resetBoard() { //es6 destructuring assignment
     [flippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
 }

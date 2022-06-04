@@ -1,5 +1,5 @@
-import { createCards } from "./CreateElements.js";
-import { shuffle, sliceData, flipCard } from "./GameLogic.js";
+import { createCards, endMessage } from "./CreateElements.js";
+import { shuffle, sliceData, flipCard, checkMatch, unflipCards, disableCards, resetBoard } from "./GameLogic.js";
 
 import ghibli from '../data/ghibli/ghibli.js';
 const dataGhibli = ghibli.items;
@@ -14,7 +14,13 @@ describe('CreateCards', () => {
     expect(() => createCards(0)).toThrow(TypeError);
     expect(() => createCards(null, [])).toThrow(TypeError);
     expect(() => createCards(0, 0)).toThrow(TypeError);
-  });  
+  });
+});
+
+describe('endMessage', () => {
+  it('it should return the data', () => {
+    expect(typeof endMessage(10, 22)).toEqual('string');
+  })
 });
 
 describe('shuffle', () => {
@@ -39,5 +45,31 @@ describe('sliceData', () => {
 describe('flipCard', () => {
   it('it should return', () => {
     expect(flipCard()).toBeUndefined();
+  });
+  it('it should be', () => {
+    expect(flipCard()).toBe(undefined);
+  });
+});
+
+describe('checkMatch', () => {
+  it('it should return', () => {
+    const [firstCard, secondCard] = [{id:1}, {id:2}];
+    expect(checkMatch(firstCard, secondCard)).toBe(unflipCards());
+  });
+  it('it should return', () => {
+    const [firstCard, secondCard] = [{id:1}, {id:1}];
+    expect(checkMatch(firstCard, secondCard)).toBe(disableCards());
+  });
+});
+
+describe('unflipCards', () => {
+  it('it should be', () => {
+    expect(unflipCards()).toBe(undefined);
+  });
+});
+
+describe('resetBoard', () => {
+  it('it should be', () => {
+    expect(resetBoard()).toBe(undefined);
   });
 });
