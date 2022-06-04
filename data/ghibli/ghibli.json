@@ -1,0 +1,35 @@
+{
+  "name": "Pokemon",
+  "items": [
+    { 
+      "id": "susuwatari", 
+      "image": "./imagesGhibli/susuwatari.png", 
+      "bgColor": "#339933" 
+    },
+    { 
+      "id": "totoro", 
+      "image": "./imagesGhibli/totoro.png", 
+      "bgColor": "#339933"
+    },
+    { 
+      "id": "conejo", 
+      "image": "./imagesGhibli/conejo.png", 
+      "bgColor": "#F05032"
+    },
+    { 
+      "id": "kodama", 
+      "image": "./imagesGhibli/kodama.png", 
+      "bgColor": "#F05032"
+    },
+    { 
+      "id": "howl", 
+      "image": "./imagesGhibli/howl.png", 
+      "bgColor": "#1572B6"
+    },
+    { 
+      "id": "kiki", 
+      "image": "./imagesGhibli/kiki.png", 
+      "bgColor": "#1572B6"
+    }
+  ]
+}
