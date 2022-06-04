@@ -53,12 +53,16 @@ describe('flipCard', () => {
 
 describe('checkMatch', () => {
   it('it should return', () => {
-    const [firstCard, secondCard] = [{id:1}, {id:2}];
-    expect(checkMatch(firstCard, secondCard)).toBe(unflipCards());
+    expect(checkMatch()).toBe(unflipCards());
   });
   it('it should return', () => {
-    const [firstCard, secondCard] = [{id:1}, {id:1}];
-    expect(checkMatch(firstCard, secondCard)).toBe(disableCards());
+    expect(checkMatch()).toBe(disableCards());
+  });
+});
+
+describe('disableCards', () => {
+  it('it should be', () => {
+    expect(disableCards()).toBe(0);
   });
 });
 
